@@ -326,9 +326,9 @@ body {
     border-width: 4px;
   }
 
-  /* Đưa phần Xem trước QR lên trên phần Cài đặt */
+  /* Đưa phần Xem trước QR xuống dưới cùng */
   .app-grid {
-    flex-direction: column-reverse;
+    flex-direction: column;
     gap: 16px;
   }
 
