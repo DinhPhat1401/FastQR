@@ -221,12 +221,22 @@
 }
 
 .bank-logo {
-  font-weight: 800;
-  font-size: 1.1rem;
+  font-weight: 900;
+  padding: 4px 10px;
+  border-radius: 8px;
+  color: white;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.bank-logo.momo { color: #a50064; }
-.bank-logo.tpbank { color: #6e279a; }
+.bank-logo.momo {
+  background: #A50064;
+}
+
+.bank-logo.tpbank {
+  background: #6c2a8c;
+}
 
 .donate-card strong {
   color: #334155;
@@ -234,7 +244,38 @@
 }
 
 .thank-you {
+  margin-top: 15px;
+  font-style: italic;
+  color: #db2777;
   font-weight: bold;
-  font-size: 1.2rem;
-  color: #be185d;
+}
+
+/* Responsive Mobile Optimizations for PiggyBank */
+@media (max-width: 768px) {
+  .pig-modal-content {
+    width: 95%;
+    max-width: 400px;
+  }
+
+  .pig-belly-inner {
+    padding: 24px 16px;
+  }
+
+  .pig-belly-inner h2 {
+    font-size: 1.4rem;
+  }
+
+  .pig-belly-inner p {
+    font-size: 0.95rem;
+  }
+
+  .donate-card {
+    padding: 10px 16px;
+    font-size: 1rem;
+  }
+
+  .donate-qr-img {
+    height: 250px;
+    max-width: 250px;
+  }
 }

@@ -306,6 +306,77 @@ body {
   color: white;
 }
 
+/* Responsive Mobile Optimizations */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 12px 10px;
+  }
+
+  .app-logo {
+    font-size: 2.2rem;
+  }
+
+  .qr-brackets {
+    padding: 2px 8px;
+  }
+
+  .qr-brackets .corner {
+    width: 10px;
+    height: 10px;
+    border-width: 4px;
+  }
+
+  /* Đưa phần Xem trước QR lên trên phần Cài đặt */
+  .app-grid {
+    flex-direction: column-reverse;
+    gap: 16px;
+  }
+
+  .right-panel {
+    flex: none;
+    width: 100%;
+    position: static;
+    max-height: none;
+    padding: 16px;
+  }
+
+  .left-panel {
+    flex: none;
+    width: 100%;
+    padding: 20px 16px;
+    gap: 24px;
+  }
+
+  /* Định dạng lại các ô chọn loại QR để cuộn ngang */
+  .type-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    gap: 12px;
+    /* Ẩn thanh cuộn trên webkit */
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .type-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .type-btn {
+    flex: 0 0 auto;
+    width: 100px;
+  }
+
+  /* Thu nhỏ các Frame một chút cho màn hình quá bé */
+  .frame-chat-top {
+    padding: 8px;
+  }
+  
+  .frame-phone {
+    padding: 16px 8px 36px 8px;
+  }
+}
+
 /* Selection Grids for Customization */
 .selection-grid {
   display: grid;

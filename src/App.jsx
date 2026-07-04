@@ -89,7 +89,7 @@ const DEFAULT_OPTIONS = {
   },
   imageOptions: {
     crossOrigin: 'anonymous',
-    margin: 10
+    margin: 0
   }
 };
 
