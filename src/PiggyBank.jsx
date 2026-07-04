@@ -143,7 +143,7 @@ const PiggyBank = () => {
                     Website hỗ trợ tạo mã QR <strong>hoàn toàn miễn phí</strong> và cam kết <strong>KHÔNG CÓ QUẢNG CÁO</strong> khi quét mã.
                   </p>
                   <p>
-                    Nếu bạn thấy hữu ích, hãy ủng hộ một ít tiền lẻ để tui <em>'nuôi heo'</em> nghenn (Bao nhiêu cũng quý!)
+                    Nếu bạn thấy hữu ích thì có thể ủng hộ một ít kinh phí để tui <em>'nuôi heo'</em> và tiếp tục phát triển web nghen (Bao nhiêu cũng quý!)
                   </p>
 
                   <div className="donate-info">
