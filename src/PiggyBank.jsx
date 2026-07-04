@@ -1,12 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { X } from 'lucide-react';
+import { X, QrCode } from 'lucide-react';
 import './PiggyBank.css';
+import momoQr from './assets/MOMO.JPG';
+import tpbankQr from './assets/TPBANK.JPG';
 
 const PiggyBank = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [position, setPosition] = useState({ x: window.innerWidth - 100, y: window.innerHeight - 100 });
   const [isDragging, setIsDragging] = useState(false);
   const [hasMounted, setHasMounted] = useState(false);
+  const [activeQR, setActiveQR] = useState(null);
 
   const dragRef = useRef({ startX: 0, startY: 0, isDragging: false });
   const pigRef = useRef(null);
@@ -126,26 +129,43 @@ const PiggyBank = () => {
 
             {/* Belly Content */}
             <div className="pig-belly-inner">
-              <h2>Chào mừng đến với Fast[QR]!</h2>
-              <p>
-                Website hỗ trợ tạo mã QR <strong>hoàn toàn miễn phí</strong> và cam kết <strong>KHÔNG CÓ QUẢNG CÁO</strong> khi quét mã.
-              </p>
-              <p>
-                Nếu bạn thấy hữu ích, hãy ủng hộ một ít tiền lẻ để tui <em>'nuôi heo'</em> nhé (Bao nhiêu cũng quý!)
-              </p>
-
-              <div className="donate-info">
-                <div className="donate-card">
-                  <div className="bank-logo momo">MoMo</div>
-                  <strong>0796742217</strong>
+              {activeQR ? (
+                <div className="qr-overlay">
+                  <button className="qr-back-btn" onClick={() => setActiveQR(null)}>
+                    <X size={18} /> Quay lại
+                  </button>
+                  <img src={activeQR === 'momo' ? momoQr : tpbankQr} alt="Donate QR" className="donate-qr-img" />
                 </div>
-                <div className="donate-card">
-                  <div className="bank-logo tpbank">TPBank</div>
-                  <strong>DinhPhat1401</strong>
-                </div>
-              </div>
+              ) : (
+                <>
+                  <h2>Chào mừng đến với Fast[QR]!</h2>
+                  <p>
+                    Website hỗ trợ tạo mã QR <strong>hoàn toàn miễn phí</strong> và cam kết <strong>KHÔNG CÓ QUẢNG CÁO</strong> khi quét mã.
+                  </p>
+                  <p>
+                    Nếu bạn thấy hữu ích, hãy ủng hộ một ít tiền lẻ để tui <em>'nuôi heo'</em> nghenn (Bao nhiêu cũng quý!)
+                  </p>
 
-              <p className="thank-you">Cảm ơn bạn rất nhiều!</p>
+                  <div className="donate-info">
+                    <div className="donate-card" onClick={() => setActiveQR('momo')} title="Nhấn để xem mã QR MoMo">
+                      <div className="bank-logo momo">MoMo</div>
+                      <div className="donate-action">
+                        <strong>0796742217</strong>
+                        <span className="qr-hint"><QrCode size={14} /> Quét QR</span>
+                      </div>
+                    </div>
+                    <div className="donate-card" onClick={() => setActiveQR('tpbank')} title="Nhấn để xem mã QR TPBank">
+                      <div className="bank-logo tpbank">TPBank</div>
+                      <div className="donate-action">
+                        <strong>DinhPhat1401</strong>
+                        <span className="qr-hint"><QrCode size={14} /> Quét QR</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <p className="thank-you">Cảm ơn bạn rất nhiều!</p>
+                </>
+              )}
             </div>
           </div>
         </div>

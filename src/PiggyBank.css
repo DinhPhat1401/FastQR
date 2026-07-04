@@ -156,6 +156,68 @@
   justify-content: space-between;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
   font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.donate-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.donate-action {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.qr-hint {
+  font-size: 0.8rem;
+  color: #db2777; /* Pink 600 */
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.qr-overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.qr-back-btn {
+  background: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  color: #831843;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.qr-back-btn:hover {
+  transform: scale(1.05);
+}
+
+.donate-qr-img {
+  width: 100%;
+  max-width: 280px;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  border: 4px solid white;
+  background: white;
 }
 
 .bank-logo {
