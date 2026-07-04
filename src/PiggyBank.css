@@ -1,0 +1,178 @@
+/* PiggyBank.css */
+
+/* Mini Pig Draggable */
+.mini-pig {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  touch-action: none; /* Prevent scroll on touch drag */
+  user-select: none;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+  transition: transform 0.1s ease-out; /* Smooth dragging */
+}
+
+.pig-svg {
+  animation: pig-bounce 1s infinite alternate ease-in-out;
+}
+
+@keyframes pig-bounce {
+  0% { transform: translateY(0) scale(1, 1); }
+  100% { transform: translateY(-10px) scale(0.95, 1.05); }
+}
+
+/* Modal Overlay */
+.pig-modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(5px);
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Modal Content (The Belly) */
+.pig-modal-content {
+  background: #fbcfe8; /* Pink 200 */
+  width: 90%;
+  max-width: 450px;
+  border-radius: 40px; /* Round belly */
+  position: relative;
+  box-shadow: inset 0 -10px 20px rgba(236, 72, 153, 0.2), 0 20px 40px rgba(0,0,0,0.5);
+  animation: popUp 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popUp {
+  from { transform: scale(0.5); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* 4 Legs */
+.pig-leg {
+  position: absolute;
+  width: 50px;
+  height: 60px;
+  background: #f9a8d4; /* Pink 300 */
+  border-radius: 30px;
+  z-index: -1;
+  box-shadow: inset 0 -5px 10px rgba(219, 39, 119, 0.2);
+}
+
+.pig-leg.top-left { top: -20px; left: 30px; transform: rotate(-30deg); }
+.pig-leg.top-right { top: -20px; right: 30px; transform: rotate(30deg); }
+.pig-leg.bottom-left { bottom: -25px; left: 40px; transform: rotate(15deg); }
+.pig-leg.bottom-right { bottom: -25px; right: 40px; transform: rotate(-15deg); }
+
+/* Snout */
+.pig-snout {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 50px;
+  background: #f472b6; /* Pink 400 */
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  box-shadow: inset 0 -4px 8px rgba(190, 24, 93, 0.3);
+  z-index: 1;
+}
+
+.nostril {
+  width: 12px;
+  height: 16px;
+  background: #be185d; /* Pink 700 */
+  border-radius: 50%;
+}
+
+/* Close Button */
+.pig-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #831843;
+  cursor: pointer;
+  z-index: 2;
+  transition: all 0.2s;
+}
+
+.pig-close-btn:hover {
+  background: white;
+  transform: scale(1.1);
+}
+
+/* Belly Inner Content */
+.pig-belly-inner {
+  padding: 50px 30px 40px 30px;
+  text-align: center;
+  color: #831843; /* Pink 900 */
+}
+
+.pig-belly-inner h2 {
+  margin: 0 0 15px 0;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.pig-belly-inner p {
+  margin: 0 0 15px 0;
+  line-height: 1.5;
+  font-size: 1.05rem;
+}
+
+/* Donate Info */
+.donate-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 25px 0;
+}
+
+.donate-card {
+  background: white;
+  padding: 12px 20px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  font-size: 1.2rem;
+}
+
+.bank-logo {
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.bank-logo.momo { color: #a50064; }
+.bank-logo.tpbank { color: #6e279a; }
+
+.donate-card strong {
+  color: #334155;
+  letter-spacing: 1px;
+}
+
+.thank-you {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #be185d;
+}
